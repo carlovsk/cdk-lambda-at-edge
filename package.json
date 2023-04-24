@@ -1,0 +1,52 @@
+{
+  "name": "cdk-lambda-at-edge",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack",
+    "cdk:build-deploy": "webpack && cd infrastructure && npm run deploy",
+    "cdk:deploy": "cdk deploy --require-approval=never"
+  },
+  "devDependencies": {
+    "aws-cdk": "1.140.0",
+    "@aws-cdk/assert": "1.140.0",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.4.1",
+    "ts-transform-graphql-tag": "^0.2.1",
+    "typescript": "4.6.4",
+    "webpack": "^4.41.5",
+    "webpack-bundle-analyzer": "^3.5.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "1.140.0",
+    "@aws-cdk/aws-apigatewayv2": "1.140.0",
+    "@aws-cdk/aws-budgets": "1.140.0",
+    "@aws-cdk/aws-certificatemanager": "1.140.0",
+    "@aws-cdk/aws-chatbot": "1.140.0",
+    "@aws-cdk/aws-cloudfront": "1.140.0",
+    "@aws-cdk/aws-cloudwatch": "1.140.0",
+    "@aws-cdk/aws-opensearchservice": "1.140.0",
+    "@aws-cdk/aws-cloudwatch-actions": "1.140.0",
+    "@aws-cdk/aws-cognito": "1.140.0",
+    "@aws-cdk/aws-dynamodb": "1.140.0",
+    "@aws-cdk/aws-elasticsearch": "1.140.0",
+    "@aws-cdk/aws-events": "^1.140.0",
+    "@aws-cdk/aws-events-targets": "^1.140.0",
+    "@aws-cdk/aws-iot": "1.140.0",
+    "@aws-cdk/aws-lambda": "1.140.0",
+    "@aws-cdk/aws-route53": "1.140.0",
+    "@aws-cdk/aws-route53-targets": "1.140.0",
+    "@aws-cdk/aws-s3": "1.140.0",
+    "@aws-cdk/aws-s3-notifications": "1.140.0",
+    "@aws-cdk/aws-ses": "1.140.0",
+    "@aws-cdk/aws-sns": "1.140.0",
+    "@aws-cdk/aws-sns-subscriptions": "1.140.0",
+    "@aws-cdk/aws-sqs": "1.140.0",
+    "@aws-cdk/core": "1.140.0",
+    "aws-cdk-ses-domain-identity": "^1.0.4",
+    "ramda": "^0.27.1"
+  }
+}

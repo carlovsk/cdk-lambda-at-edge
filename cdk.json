@@ -1,0 +1,3 @@
+{
+  "app": "npx node stacks/main.js"
+}
