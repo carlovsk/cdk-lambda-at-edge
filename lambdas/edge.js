@@ -1,9 +1,25 @@
+const { SSM } = require('aws-sdk');
+
+const ssm = new SSM();
+
 async function handler (event) {
   const { request } = event.Records[0].cf;
   const headers = request.headers;
 
-  const username = 'kromid';
-  const password = 'kromid';
+  const usernameResult = await ssm.getParameter({
+    Name: '/lambda-at-edge/username',
+    WithDecryption: true,
+  }).promise();
+  
+  const username = usernameResult.Parameter?.Value;
+  
+  const passwordResult = await ssm.getParameter({
+    Name: '/lambda-at-edge/password',
+    WithDecryption: true,
+  }).promise();
+
+  const password = passwordResult.Parameter?.Value;
+
 
   const base64Credentials = Buffer.from(`${username}:${password}`).toString('base64');
   const authString = `Basic ${base64Credentials}`;
